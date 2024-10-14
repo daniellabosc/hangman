@@ -6,13 +6,13 @@ import HangmanWord from './HangmanWord'
 import Keyboard from './Keyboard'
 
 function App() {
-const [wordToGuess, setWordToGuess] = useState<string>(()=>{
+const [wordToGuess] = useState<string>(()=>{
   return words[Math.floor(Math.random() * words.length)].toUpperCase()
 })
 const [guessedLetters, setGuessedLetters] = useState<string[]>([])
 const incorrectLetters = guessedLetters.filter((letter)=>!wordToGuess.includes(letter))
 const correctLetters = guessedLetters.filter((letter)=>wordToGuess.includes(letter))
-const addGuessedLetter = (letter)=>{
+const addGuessedLetter = (letter:string)=>{
   if(guessedLetters.includes(letter)) return
   setGuessedLetters((currentLetters)=>[...currentLetters, letter])
 }

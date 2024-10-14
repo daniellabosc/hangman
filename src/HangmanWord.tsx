@@ -1,7 +1,7 @@
 
 type HangmanWordProps = {
     wordToGuess:string
-    guessedLetters: []
+    guessedLetters: string[]
 }
 
 const HangmanWord = ({wordToGuess, guessedLetters}: HangmanWordProps)=>{
